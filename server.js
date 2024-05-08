@@ -7,6 +7,10 @@ const port = 8080;
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("server monitoring api");
+});
+
 app.get("/checkServerStatus", async (req, res) => {
   console.log(
     chalk.blue(`GET /checkServerStatus ${chalk.gray(new Date().toISOString())}`)
