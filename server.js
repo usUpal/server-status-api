@@ -19,7 +19,7 @@ app.get("/checkServerStatus", async (req, res) => {
 
   // List of servers to check
   const servers = [
-    "https://workflow.foodrabbit.store",
+    "https://workflow.foodrabbit.store/api/v1/_health/ready",
     "https://www.google.com",
     "https://onboarding.foodrabbit.store",
     "https://backoffice.foodrabbit.store",
