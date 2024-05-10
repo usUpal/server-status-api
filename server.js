@@ -30,6 +30,18 @@ app.get("/checkServerStatus", async (req, res) => {
     "https://chatbot-train.keoscx.com/api/v1/health",
     "https://ballerine-api.foodrabbit.store/api/v1/health",
     "https://checkout.foodrabbit.store/HyperLoader.js",
+    "https://aviancaoffline.foodrabbit.ai/",
+    "http://loyalty.keoscx.com/",
+    "https://keoscard.keoscx.com/",
+    "http://labcrm.keoscx.com/",
+    "https://stg-mail.keos.co/",
+    "https://dmail.keosapp.com/",
+    "https://keoswallet.luminousdemo.com/",
+    "https://keoscrm.com",
+    "https://calendar.keoscx.com/"
+
+
+
   ];
   await Promise.all(
     servers.map(async (server) => {
