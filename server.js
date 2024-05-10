@@ -29,6 +29,7 @@ app.get("/checkServerStatus", async (req, res) => {
     "https://keosgpt.keoscx.com",
     "https://chatbot-train.keoscx.com/api/v1/health",
     "https://ballerine-api.foodrabbit.store/api/v1/health",
+    "https://checkout.foodrabbit.store/HyperLoader.js",
   ];
   await Promise.all(
     servers.map(async (server) => {
