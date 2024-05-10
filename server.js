@@ -18,7 +18,7 @@ app.get("/checkServerStatus", async (req, res) => {
 
   const servers = [
     "https://workflow.foodrabbit.store/api/v1/_health/ready",
-    "https://www.google.com",
+    "https://8.8.8.8/",
     "https://onboarding.foodrabbit.store",
     "https://backoffice.foodrabbit.store",
     "https://kyc.foodrabbit.store",
