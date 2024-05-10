@@ -1,5 +1,4 @@
 const express = require("express");
-const axios = require("axios");
 const chalk = require("ansi-colors");
 const app = express();
 const cors = require("cors");
@@ -17,7 +16,6 @@ app.get("/checkServerStatus", async (req, res) => {
   );
   const serverStatus = {};
 
-  // List of servers to check
   const servers = [
     "https://workflow.foodrabbit.store/api/v1/_health/ready",
     "https://www.google.com",
@@ -30,14 +28,17 @@ app.get("/checkServerStatus", async (req, res) => {
     "https://eventos.keoscx.com",
     "https://keosgpt.keoscx.com",
     "https://chatbot-train.keoscx.com/api/v1/health",
-    "https://ballerine-api.foodrabbit.store/api/v1/health"
+    "https://ballerine-api.foodrabbit.store/api/v1/health",
   ];
-
   await Promise.all(
     servers.map(async (server) => {
       try {
-        await axios.get(server);
-        serverStatus[server] = "up";
+        const response = await fetch(server);
+        if (response.ok) {
+          serverStatus[server] = "up";
+        } else {
+          serverStatus[server] = "down";
+        }
       } catch (error) {
         serverStatus[server] = "down";
       }
@@ -48,5 +49,5 @@ app.get("/checkServerStatus", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server monitoring app listening at http://localhost:${port}`);
+  console.log(`Server:${port} ✅`);
 });
