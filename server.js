@@ -38,11 +38,9 @@ app.get("/checkServerStatus", async (req, res) => {
     "https://dmail.keosapp.com/",
     "https://keoswallet.luminousdemo.com/",
     "https://keoscrm.com",
-    "https://calendar.keoscx.com/"
-
-
-
-  ];
+    "https://calendar.keoscx.com/",
+    "https://events.keosapp.com/"
+];
   await Promise.all(
     servers.map(async (server) => {
       try {
